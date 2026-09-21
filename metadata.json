@@ -1,0 +1,6 @@
+{
+  "name": "Moments & Memories - Digital Celebration Platform",
+  "description": "Create digital memory collections for birthdays, anniversaries, and celebrations. Collect private photos, videos, voice messages, and wishes from friends and family.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
