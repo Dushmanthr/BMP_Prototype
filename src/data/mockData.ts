@@ -465,6 +465,8 @@ export const INITIAL_FRIEND_RESPONSES: FriendGiftResponse[] = [
       'She was admiring a handmade ceramic pour-over dripper at the market in Rome! She also mentioned wanting cozy woolen socks.',
     category: 'Home & Kitchen',
     date: 'Yesterday',
+    votes: 5,
+    priceEstimate: '$65',
   },
   {
     id: 'fr-2',
@@ -473,6 +475,8 @@ export const INITIAL_FRIEND_RESPONSES: FriendGiftResponse[] = [
       'She always loses her guitar picks and loves portable acoustic recording gear. Maybe something for her music space.',
     category: 'Music',
     date: '2 days ago',
+    votes: 3,
+    priceEstimate: '$85',
   },
   {
     id: 'fr-3',
@@ -481,5 +485,8 @@ export const INITIAL_FRIEND_RESPONSES: FriendGiftResponse[] = [
       'An experience would be amazing for her! She has been wanting to try pottery throwing or a sourdough bread making masterclass.',
     category: 'Experience',
     date: '3 days ago',
+    votes: 7,
+    priceEstimate: '$120',
   },
 ];
+

@@ -61,7 +61,9 @@ interface AppContextType {
   createPhysicalOrder: (productName: string, recipient: string, address: string) => void;
   giftFinder: GiftFinderData;
   updateGiftFinder: (data: Partial<GiftFinderData>) => void;
-  addFriendGiftResponse: (name: string, suggestion: string, category: string) => void;
+  addFriendGiftResponse: (name: string, suggestion: string, category: string, priceEstimate?: string, link?: string) => void;
+  addFriendDetailNote: (friendName: string, noteType: 'secret-wish' | 'already-owns' | 'preference' | 'size-brand', content: string) => void;
+  voteFriendGiftResponse: (responseId: string) => void;
   songGeneration: SongGenerationData;
   updateSongGeneration: (data: Partial<SongGenerationData>) => void;
   toast: string | null;
@@ -139,8 +141,34 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     thingsTheyUse: 'Chemex dripper, Olympus film camera, Moleskine notebooks.',
     thingsTheyOwn: 'Lots of fiction books, watercolor sets, standard headphones.',
     budget: '$50 - $100',
+    spaceCreated: true,
+    spaceShareId: 'gf-sarah-25th',
     friendResponses: INITIAL_FRIEND_RESPONSES,
+    friendDetails: [
+      {
+        id: 'fd-1',
+        friendName: 'Emma Watson',
+        noteType: 'secret-wish',
+        content: 'She was admiring a handmade ceramic pour-over dripper at the market and said she wished she had one!',
+        date: 'Yesterday, 2:15 PM',
+      },
+      {
+        id: 'fd-2',
+        friendName: 'Michael Chen',
+        noteType: 'already-owns',
+        content: 'Don’t buy standard pour-over filters or travel mugs—she already has three of them in her kitchen!',
+        date: '2 days ago',
+      },
+      {
+        id: 'fd-3',
+        friendName: 'Sophie & Liam',
+        noteType: 'preference',
+        content: 'She loves earthy, neutral tones (terracotta, sage, warm stone) rather than neon colors.',
+        date: '3 days ago',
+      },
+    ],
   });
+
 
 
   // Song Generator State
@@ -319,20 +347,62 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setGiftFinder((prev) => ({ ...prev, ...data }));
   };
 
-  const addFriendGiftResponse = (name: string, suggestion: string, category: string) => {
+  const addFriendGiftResponse = (
+    name: string,
+    suggestion: string,
+    category: string,
+    priceEstimate?: string,
+    link?: string
+  ) => {
     const newResp = {
       id: `fr-${Date.now()}`,
       friendName: name,
       suggestion,
       category,
+      priceEstimate: priceEstimate || '$50 - $100',
+      link,
+      votes: 1,
       date: 'Just now',
     };
     setGiftFinder((prev) => ({
       ...prev,
       friendResponses: [newResp, ...prev.friendResponses],
     }));
-    showToast(`Thank you, ${name}! Your gift idea was saved privately.`);
+    triggerConfetti();
+    showToast(`Thank you, ${name}! Your gift idea "${suggestion.slice(0, 30)}..." was shared.`);
   };
+
+  const addFriendDetailNote = (
+    friendName: string,
+    noteType: 'secret-wish' | 'already-owns' | 'preference' | 'size-brand',
+    content: string
+  ) => {
+    const newNote = {
+      id: `fd-${Date.now()}`,
+      friendName,
+      noteType,
+      content,
+      date: 'Just now',
+    };
+    setGiftFinder((prev) => ({
+      ...prev,
+      friendDetails: [newNote, ...(prev.friendDetails || [])],
+    }));
+    triggerConfetti();
+    showToast(`Detail added from ${friendName}! Group notes updated.`);
+  };
+
+  const voteFriendGiftResponse = (responseId: string) => {
+    setGiftFinder((prev) => ({
+      ...prev,
+      friendResponses: prev.friendResponses.map((r) =>
+        r.id === responseId ? { ...r, votes: (r.votes || 0) + 1 } : r
+      ),
+    }));
+    triggerConfetti();
+    showToast('Your vote was added to this gift idea!');
+  };
+
 
   const updateSongGeneration = (data: Partial<SongGenerationData>) => {
     setSongGeneration((prev) => ({ ...prev, ...data }));
@@ -437,6 +507,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         updateGiftFinderData: updateGiftFinder,
         giftRecommendations,
         addFriendGiftResponse,
+        addFriendDetailNote,
+        voteFriendGiftResponse,
         songGeneration,
         updateSongGeneration,
         toast,
