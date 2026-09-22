@@ -146,7 +146,7 @@ export const ContributorUpload: React.FC = () => {
                   : 'border-gray-200 hover:border-gray-300 bg-[#FAFAFB]'
               }`}
             >
-              <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center mb-2 text-[#243B53]">
+              <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center mb-2 text-[#FF6B6B]">
                 <Video className="w-5 h-5" />
               </div>
               <span className="font-bold text-xs text-[#243B53]">Video</span>
@@ -184,7 +184,7 @@ export const ContributorUpload: React.FC = () => {
                   : 'border-gray-200 hover:border-gray-300 bg-[#FAFAFB]'
               }`}
             >
-              <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center mb-2 text-[#243B53]">
+              <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center mb-2 text-[#FF6B6B]">
                 <FileText className="w-5 h-5" />
               </div>
               <span className="font-bold text-xs text-[#243B53]">Write a Wish</span>

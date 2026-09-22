@@ -94,12 +94,24 @@ export interface GiftRecommendation {
   image: string;
 }
 
+export interface FriendDetailNote {
+  id: string;
+  friendName: string;
+  noteType: 'secret-wish' | 'already-owns' | 'preference' | 'size-brand';
+  content: string;
+  date: string;
+}
+
 export interface FriendGiftResponse {
   id: string;
   friendName: string;
   suggestion: string;
   category: string;
   date: string;
+  priceEstimate?: string;
+  link?: string;
+  votes?: number;
+  likedBy?: string[];
 }
 
 export interface GiftFinderData {
@@ -116,7 +128,11 @@ export interface GiftFinderData {
   thingsTheyOwn?: string;
   budget: string;
   friendResponses: FriendGiftResponse[];
+  friendDetails?: FriendDetailNote[];
+  spaceCreated?: boolean;
+  spaceShareId?: string;
 }
+
 
 
 export interface SongGenerationData {
