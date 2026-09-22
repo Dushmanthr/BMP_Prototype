@@ -16,6 +16,11 @@ import {
   CheckCircle2,
   Calendar,
   Lock,
+  Cake,
+  GlassWater,
+  Gem,
+  GraduationCap,
+  Flower2
 } from 'lucide-react';
 import { OccasionType } from '../../types';
 
@@ -31,12 +36,12 @@ export const LandingPage: React.FC = () => {
   };
 
   const supportedOccasions: Array<{ type: OccasionType; desc: string; icon: string }> = [
-    { type: 'Birthday', desc: 'Milestones, sweet sixteens & golden jubilees', icon: '🎂' },
-    { type: 'Anniversary', desc: 'Celebrating lasting love & shared years', icon: '🥂' },
-    { type: 'Bride to Be', desc: 'Bridal showers, bachelorette & bridal advice', icon: '💍' },
-    { type: 'Graduation', desc: 'Honoring hard work & bright new chapters', icon: '🎓' },
-    { type: 'Wedding', desc: 'Cherished memories & blessings for newlyweds', icon: '💐' },
-    { type: 'Other', desc: 'Retirement, baby showers & farewell honors', icon: '✨' },
+    { type: 'Birthday', desc: 'Milestones, sweet sixteens & golden jubilees', icon: Cake },
+    { type: 'Anniversary', desc: 'Celebrating lasting love & shared years', icon: GlassWater },
+    { type: 'Bride to Be', desc: 'Bridal showers, bachelorette & bridal advice', icon: Gem },
+    { type: 'Graduation', desc: 'Honoring hard work & bright new chapters', icon: GraduationCap },
+    { type: 'Wedding', desc: 'Cherished memories & blessings for newlyweds', icon: Flower2 },
+    { type: 'Other', desc: 'Retirement, baby showers & farewell honors', icon: Sparkles },
   ];
 
   const featureCards = [
@@ -48,7 +53,7 @@ export const LandingPage: React.FC = () => {
     {
       title: 'Invite Friends',
       desc: 'Share a simple link. Loved ones contribute without creating accounts.',
-      icon: <Users className="w-6 h-6 text-[#243B53]" />,
+      icon: <Users className="w-6 h-6 text-[#FF6B6B]" />,
     },
     {
       title: 'Collect Memories',
@@ -58,7 +63,7 @@ export const LandingPage: React.FC = () => {
     {
       title: 'Celebrate Together',
       desc: 'Review, approve, and present an unforgettable digital celebration page.',
-      icon: <PartyPopper className="w-6 h-6 text-[#243B53]" />,
+      icon: <PartyPopper className="w-6 h-6 text-[#FF6B6B]" />,
     },
   ];
 
@@ -79,7 +84,7 @@ export const LandingPage: React.FC = () => {
     {
       title: 'Beautiful Memories',
       desc: 'Voice messages with animated audio players, high-resolution photography, and intimate written notes.',
-      icon: <Sparkles className="w-6 h-6 text-[#243B53]" />,
+      icon: <Sparkles className="w-6 h-6 text-[#FF6B6B]" />,
     },
     {
       title: 'Easy Sharing',
@@ -89,7 +94,7 @@ export const LandingPage: React.FC = () => {
     {
       title: 'Long-term Preservation',
       desc: 'Export high-res archives, order heirloom hardcover books, or preserve memories in our encrypted cloud.',
-      icon: <Shield className="w-6 h-6 text-[#243B53]" />,
+      icon: <Shield className="w-6 h-6 text-[#FF6B6B]" />,
     },
   ];
 
@@ -105,7 +110,7 @@ export const LandingPage: React.FC = () => {
       title: 'Physical Keepsakes',
       desc: 'Handmade linen hardcover photo books, solid oak frames, and archival memory chests.',
       price: 'From $24.00',
-      icon: <ShoppingBag className="w-6 h-6 text-[#243B53]" />,
+      icon: <ShoppingBag className="w-6 h-6 text-[#FF6B6B]" />,
       action: () => setCurrentView('physical-keepsake'),
     },
     {
@@ -119,13 +124,13 @@ export const LandingPage: React.FC = () => {
       title: 'Digital Products',
       desc: 'Printable celebration signage, stationery templates, and greeting card suites.',
       price: 'From $6.99',
-      icon: <Sparkles className="w-6 h-6 text-[#243B53]" />,
+      icon: <Sparkles className="w-6 h-6 text-[#FF6B6B]" />,
       action: () => setCurrentView('digital-store'),
     },
   ];
 
   return (
-    <div className="bg-[#FAFAFB] min-h-screen text-[#243B53]">
+    <div className="bg-[#FAFAFB] min-h-screen text-[#FF6B6B]">
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-12 pb-20 sm:pt-16 sm:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -317,8 +322,8 @@ export const LandingPage: React.FC = () => {
                 onClick={handleCreateOccasion}
                 className="p-5 rounded-2xl bg-[#FAFAFB] hover:bg-white border border-gray-200 hover:border-[#FF6B6B] transition-all text-center hover:shadow-md group cursor-pointer"
               >
-                <div className="text-3xl mb-3 transform group-hover:scale-110 transition-transform">
-                  {occ.icon}
+                <div className="text-3xl flex justify-center transform group-hover:scale-110 transition-transform">
+                  <occ.icon className="w-9 h-9 text-[#FF6B6B]" strokeWidth={2}/>
                 </div>
                 <h3 className="font-bold text-sm text-[#243B53] group-hover:text-[#FF6B6B] transition-colors">
                   {occ.type}
