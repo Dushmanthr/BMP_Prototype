@@ -142,7 +142,7 @@ export const OccasionMemorySpace: React.FC = () => {
         <div className="p-5 rounded-2xl bg-white text-[#243B53] border border-gray-200">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-semibold uppercase tracking-wider">Contributors</span>
-            <Users className="w-4 h-4 text-[#243B53]" />
+            <Users className="w-4 h-4 text-[#FF6B6B]" />
           </div>
           <p className="text-2xl font-extrabold">{activeOccasion.contributorsCount}</p>
         </div>
@@ -172,7 +172,7 @@ export const OccasionMemorySpace: React.FC = () => {
         >
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-semibold uppercase tracking-wider">Videos</span>
-            <Video className="w-4 h-4 text-[#243B53]" />
+            <Video className="w-4 h-4 text-[#FF6B6B]" />
           </div>
           <p className="text-2xl font-extrabold">{videosCount}</p>
         </div>

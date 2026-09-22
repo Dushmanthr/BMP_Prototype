@@ -192,7 +192,7 @@ export const CelebrationPersonView: React.FC = () => {
                 : 'bg-white text-[#243B53] border border-gray-200 hover:border-gray-300'
             }`}
           >
-            <Video className="w-3.5 h-3.5 text-[#243B53]" />
+            <Video className="w-3.5 h-3.5 text-[#FF6B6B]" />
             Videos
           </button>
           <button
