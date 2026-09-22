@@ -301,10 +301,10 @@ export const CreatorDashboard: React.FC = () => {
           <div className="bg-white rounded-3xl p-6 border border-gray-200 hover:border-[#FF6B6B]/40 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#243B53]/10 text-[#243B53] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#243B53] group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-2xl bg-[#FF6B6B]/10 text-[#FF6B6B] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#FF6B6B] group-hover:text-white transition-all duration-300">
                   <Gift className="w-6 h-6" />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#243B53]/10 text-[#243B53]">
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#FF6B6B]/10 text-[#FF6B6B]">
                   Guided AI
                 </span>
               </div>
@@ -329,10 +329,10 @@ export const CreatorDashboard: React.FC = () => {
           <div className="bg-white rounded-3xl p-6 border border-gray-200 hover:border-[#FF6B6B]/40 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center group-hover:scale-110 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-2xl bg-[#FF6B6B]/10 text-[#FF6B6B] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#FF6B6B] group-hover:text-white transition-all duration-300">
                   <BookOpen className="w-6 h-6" />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-700">
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#FF6B6B]/15 text-[#FF6B6B]">
                   Prints & Digital
                 </span>
               </div>
@@ -357,10 +357,10 @@ export const CreatorDashboard: React.FC = () => {
           <div className="bg-white rounded-3xl p-6 border border-gray-200 hover:border-[#FF6B6B]/40 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-600 flex items-center justify-center group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-2xl bg-[#FF6B6B]/10 text-[#FF6B6B] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#FF6B6B] group-hover:text-white transition-all duration-300">
                   <ShoppingBag className="w-6 h-6" />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-700">
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#FF6B6B]/15 text-[#FF6B6B]">
                   Store
                 </span>
               </div>
