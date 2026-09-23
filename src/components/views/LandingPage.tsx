@@ -139,7 +139,7 @@ export const LandingPage: React.FC = () => {
             {/* Left Column Text */}
             <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FF6B6B]/10 text-[#FF6B6B] font-semibold text-xs tracking-wide">
-                <Sparkles className="w-3.5 h-3.5" />
+                <div className="w-3.5 h-3.5" />
                 The Digital Celebration & Memory Platform
               </div>
 

@@ -156,7 +156,7 @@ export const Header: React.FC = () => {
                         : 'text-[#243B53] hover:bg-gray-100/80'
                     }`}
                   >
-                    <Sparkles className="w-4 h-4 text-[#FF6B6B]" />
+                    <div className="w-4 h-4 text-[#FF6B6B]" />
                     <span>Celebration Tools</span>
                     <ChevronDown
                       className={`w-3.5 h-3.5 transition-transform duration-200 ${
