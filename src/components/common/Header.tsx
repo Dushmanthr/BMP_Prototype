@@ -101,7 +101,7 @@ export const Header: React.FC = () => {
           </div>
           <div>
             <span className="font-extrabold text-lg sm:text-xl text-[#243B53] tracking-tight block leading-tight">
-              Moments <span className="text-[#FF6B6B]">&</span> Memories
+              Cele<span className="text-[#FF6B6B]">Hut</span> 
             </span>
             <span className="text-[11px] text-gray-500 font-medium block">
               Digital Celebration Platform
