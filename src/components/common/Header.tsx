@@ -101,7 +101,7 @@ export const Header: React.FC = () => {
           </div>
           <div>
             <span className="font-extrabold text-lg sm:text-xl text-[#243B53] tracking-tight block leading-tight">
-              Moments <span className="text-[#FF6B6B]">&</span> Memories
+              Cele<span className="text-[#FF6B6B]">Hut</span> 
             </span>
             <span className="text-[11px] text-gray-500 font-medium block">
               Digital Celebration Platform
@@ -156,7 +156,7 @@ export const Header: React.FC = () => {
                         : 'text-[#243B53] hover:bg-gray-100/80'
                     }`}
                   >
-                    <Sparkles className="w-4 h-4 text-[#FF6B6B]" />
+                    <div className="w-4 h-4 text-[#FF6B6B]" />
                     <span>Celebration Tools</span>
                     <ChevronDown
                       className={`w-3.5 h-3.5 transition-transform duration-200 ${
