@@ -12,7 +12,6 @@ import {
   BookOpen,
   HardDrive,
   ShoppingBag,
-  Volume2,
   CheckCircle2,
   Calendar,
   Lock,
@@ -189,57 +188,22 @@ export const LandingPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Column Visual Collage */}
+            {/* Right Column Visual (Clean, Humanized Hero Image) */}
             <div className="lg:col-span-6 relative">
+              {/* Subtle ambient warm glow */}
+              <div 
+                className="absolute -inset-4 sm:-inset-6 bg-gradient-to-tr from-[#FF6B6B]/15 via-rose-100/30 to-amber-100/20 rounded-3xl blur-2xl -z-10" 
+                aria-hidden="true" 
+              />
+
               <div className="relative mx-auto max-w-md lg:max-w-none">
-                {/* Main Hero Visual Card */}
+                {/* Clean, Framed Humanized Hero Image */}
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
                   <img
-                    src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=900&q=80"
-                    alt="Celebration memories"
-                    className="w-full h-80 sm:h-96 object-cover"
+                    src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80"
+                    alt="Loved ones celebrating together and making memories"
+                    className="w-full h-80 sm:h-[440px] lg:h-[490px] object-cover hover:scale-[1.02] transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#243B53]/85 via-[#243B53]/20 to-transparent flex flex-col justify-end p-6 text-white">
-                    <span className="px-3 py-1 bg-[#FF6B6B] text-white text-xs font-bold rounded-full w-max mb-2">
-                      Sarah’s 25th Birthday Space
-                    </span>
-                    <h3 className="text-xl font-bold">24 Cherished Memories Collected</h3>
-                    <p className="text-sm text-gray-200">From 12 loved ones across 4 countries</p>
-                  </div>
-                </div>
-
-                {/* Floating Preview: Photo Memory Badge */}
-                <div className="absolute -top-4 -left-4 sm:-left-8 bg-white p-3.5 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3 animate-pulse">
-                  <img
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
-                    alt="Emma photo upload"
-                    className="w-12 h-12 rounded-xl object-cover"
-                  />
-                  <div>
-                    <span className="text-[11px] font-bold text-[#FF6B6B] block">Photo from Emma</span>
-                    <p className="text-xs text-[#243B53] font-semibold">“Sunrise hike in Amalfi”</p>
-                  </div>
-                </div>
-
-                {/* Floating Preview: Voice Message Badge */}
-                <div className="absolute -bottom-6 -left-2 sm:-left-6 bg-white p-3.5 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-xl bg-[#FF6B6B]/10 flex items-center justify-center text-[#FF6B6B]">
-                    <Volume2 className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="text-[11px] font-bold text-[#243B53] block">Audio Message from Daniel</span>
-                    <p className="text-xs text-gray-500 font-mono">0:48 Voice note & song</p>
-                  </div>
-                </div>
-
-                {/* Floating Preview: Written Wish Badge */}
-                <div className="absolute -bottom-4 -right-2 sm:-right-6 bg-white p-3.5 rounded-2xl shadow-xl border border-gray-100 max-w-[210px] hidden sm:block">
-                  <span className="text-[10px] font-bold text-[#FF6B6B] uppercase tracking-wider block">
-                    Wish from Michael
-                  </span>
-                  <p className="text-xs text-gray-700 italic line-clamp-2">
-                    “Sarah, you make everyone feel so seen and loved...”
-                  </p>
                 </div>
               </div>
             </div>
