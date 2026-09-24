@@ -14,7 +14,7 @@ import { Memory, Occasion } from '../../../types';
 import { BookPageData, BookSpread, LightboxMedia } from './types';
 import { BookCover } from './BookCover';
 import { MemoryPageRenderer } from './MemoryPageRenderer';
-import { LightboxModal } from './LightboxModal';
+import { LightboxModal } from './LightBoxModal';
 import { soundManager } from './soundEffects';
 
 interface MagicFlipBookProps {
