@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, Calendar, User, ZoomIn, Play } from 'lucide-react';
+import { X, Calendar, User, Play } from 'lucide-react';
 import { LightboxMedia } from './types';
 
 interface LightboxModalProps {
