@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { useApp } from '../../context/AppContext';
+import { HERO_IMAGE_CONFIG } from '../../config/heroConfig';
 import {
   Heart,
   Users,
@@ -19,12 +20,42 @@ import {
   GlassWater,
   Gem,
   GraduationCap,
-  Flower2
+  Flower2,
+  Camera,
+  RotateCcw,
 } from 'lucide-react';
 import { OccasionType } from '../../types';
 
 export const LandingPage: React.FC = () => {
   const { setCurrentView, user } = useApp();
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [heroImageSrc, setHeroImageSrc] = useState<string>(HERO_IMAGE_CONFIG.src);
+  const [isCustomPreview, setIsCustomPreview] = useState<boolean>(false);
+  const [imgLoadError, setImgLoadError] = useState<boolean>(false);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        if (event.target?.result) {
+          setHeroImageSrc(event.target.result as string);
+          setIsCustomPreview(true);
+          setImgLoadError(false);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleResetImage = () => {
+    setHeroImageSrc(HERO_IMAGE_CONFIG.src);
+    setIsCustomPreview(false);
+    setImgLoadError(false);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+  };
 
   const handleCreateOccasion = () => {
     if (user) {
@@ -196,14 +227,68 @@ export const LandingPage: React.FC = () => {
                 aria-hidden="true" 
               />
 
-              <div className="relative mx-auto max-w-md lg:max-w-none">
+              <div className="relative mx-auto max-w-md lg:max-w-none group">
                 {/* Clean, Framed Humanized Hero Image */}
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
                   <img
-                    src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80"
-                    alt="Loved ones celebrating together and making memories"
+                    src={heroImageSrc}
+                    alt={HERO_IMAGE_CONFIG.alt}
+                    onError={() => {
+                      if (!imgLoadError) {
+                        setImgLoadError(true);
+                        setHeroImageSrc(HERO_IMAGE_CONFIG.fallbackSrc);
+                      }
+                    }}
                     className="w-full h-80 sm:h-[440px] lg:h-[490px] object-cover hover:scale-[1.02] transition-transform duration-700"
                   />
+
+                  {/* Hidden file input for manual preview / testing */}
+                  <input
+                    type="file"
+                    ref={fileInputRef}
+                    onChange={handleFileChange}
+                    accept="image/*"
+                    className="hidden"
+                    id="hero-image-manual-input"
+                  />
+
+                  {/* Floating Action Buttons */}
+                  <div className="absolute top-4 right-4 flex items-center gap-2">
+                    {isCustomPreview && (
+                      <button
+                        onClick={handleResetImage}
+                        type="button"
+                        title="Reset to default image"
+                        className="px-3 py-1.5 rounded-full bg-black/60 hover:bg-black/80 text-white text-xs font-medium flex items-center gap-1.5 shadow-md backdrop-blur-md transition-all cursor-pointer"
+                      >
+                        <RotateCcw className="w-3.5 h-3.5" />
+                        <span>Reset</span>
+                      </button>
+                    )}
+
+                    <button
+                      onClick={() => fileInputRef.current?.click()}
+                      type="button"
+                      title="Upload/preview image directly from your computer"
+                      className="px-3.5 py-1.5 rounded-full bg-white/90 hover:bg-white text-[#243B53] text-xs font-semibold backdrop-blur-md border border-white/60 shadow-md flex items-center gap-1.5 transition-all transform active:scale-95 cursor-pointer opacity-90 group-hover:opacity-100"
+                    >
+                      <Camera className="w-3.5 h-3.5 text-[#FF6B6B]" />
+                      <span>{isCustomPreview ? 'Change Photo' : 'Test Custom Image'}</span>
+                    </button>
+                  </div>
+
+                  {/* Notification banner when previewing a local file */}
+                  {isCustomPreview && (
+                    <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-4 text-white text-xs">
+                      <div className="flex items-center gap-1.5 font-semibold text-emerald-300">
+                        <CheckCircle2 className="w-3.5 h-3.5" />
+                        Previewing selected image
+                      </div>
+                      <p className="text-[11px] text-gray-200 mt-0.5">
+                        To save permanently, replace <code className="bg-white/20 px-1 py-0.5 rounded text-white font-mono">public/images/hero/hero-image.jpg</code> or edit <code className="bg-white/20 px-1 py-0.5 rounded text-white font-mono">src/config/heroConfig.ts</code>.
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
