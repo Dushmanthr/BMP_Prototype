@@ -175,6 +175,7 @@ export type AppView =
   | 'finalize-celebration'
   | 'celebration-page'
   | 'digital-keepsake'
+  |'memory-journey'
   | 'physical-keepsake'
   | 'storage'
   | 'storage-upgrade'

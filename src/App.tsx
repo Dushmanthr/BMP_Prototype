@@ -20,6 +20,7 @@ import { FinalizeCelebrationScreen } from './components/views/FinalizeCelebratio
 import { CelebrationPersonView } from './components/views/CelebrationPersonView';
 import { GiftFinderFlow } from './components/views/GiftFinderFlow';
 import { DigitalKeepsakeView } from './components/views/DigitalKeepsakeView';
+import { MemoryJourneyView } from './components/views/memoryJourney/MemoryJourneyView';
 import { PhysicalKeepsakeView } from './components/views/PhysicalKeepsakeView';
 import { StorageUpgradeView } from './components/views/StorageUpgradeView';
 import { DigitalStoreView } from './components/views/DigitalStoreView';
@@ -61,6 +62,8 @@ const AppContent: React.FC = () => {
         return <GiftFinderFlow />;
       case 'digital-keepsake':
         return <DigitalKeepsakeView />;
+      case 'memory-journey':
+        return <MemoryJourneyView />;
       case 'physical-keepsake':
         return <PhysicalKeepsakeView />;
       case 'storage':
