@@ -131,6 +131,12 @@ export const PrototypeNavigator: React.FC = () => {
       icon: <Flower2 className="w-3.5 h-3.5 text-emerald-400" />,
     },
     {
+      id: "memory-bloom",
+      label: "14e. Keepsake: Memory Bloom",
+      tag: "NEW",
+      icon: <Flower2 className="w-3.5 h-3.5 text-rose-400" />,
+    },
+    {
       id: "physical-keepsake",
       label: "15. Physical Keepsake",
       tag: "Shop",

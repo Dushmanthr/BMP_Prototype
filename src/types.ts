@@ -178,6 +178,7 @@ export type AppView =
   | 'memory-journey'
   | 'memory-constellation'
   | 'memory-garden'
+  | 'memory-bloom'
   | 'physical-keepsake'
   | 'storage'
   | 'storage-upgrade'

@@ -11,6 +11,7 @@ import {
   Grid,
   Heart,
   ChevronDown,
+  Flower2,
 } from 'lucide-react';
 import { useApp } from '../../../context/AppContext';
 import { OccasionType } from '../../../types';
@@ -221,6 +222,16 @@ export const MemoryConstellationView: React.FC<MemoryConstellationViewProps> = (
             >
               <Map className="w-3.5 h-3.5 text-emerald-400" />
               <span className="hidden lg:inline">Memory Journey</span>
+            </button>
+            
+            {/* Switch to Memory Bloom Keepsake Template */}
+            <button
+              onClick={() => setCurrentView('memory-bloom')}
+              className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-gray-200 hover:text-white text-xs font-bold border border-white/15 transition-all cursor-pointer"
+              title="Switch to Memory Bloom Keepsake Template"
+            >
+              <Flower2 className="w-3.5 h-3.5 text-rose-400" />
+              <span className="hidden lg:inline">Memory Bloom</span>
             </button>
           </div>
         </div>
