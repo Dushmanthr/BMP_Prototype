@@ -12,6 +12,7 @@ import {
   Map,
   Share2,
   ChevronDown,
+  Flower2,
 } from 'lucide-react';
 import { useApp } from '../../../context/AppContext';
 import { OccasionType } from '../../../types';
@@ -205,6 +206,16 @@ export const MemoryJourneyView: React.FC<MemoryJourneyViewProps> = ({
                 <span className="hidden md:inline">Keepsake Store</span>
               </button>
             )}
+            
+            {/* Switch to Memory Bloom Keepsake Template */}
+            <button
+              onClick={() => setCurrentView('memory-bloom')}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold border border-stone-200 shadow-xs transition-all cursor-pointer"
+              title="Switch to Memory Bloom Keepsake Template"
+            >
+              <Flower2 className="w-3.5 h-3.5 text-rose-500" />
+              <span className="hidden md:inline">Memory Bloom</span>
+            </button>
           </div>
         </div>
       </header>

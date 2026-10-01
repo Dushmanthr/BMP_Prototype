@@ -23,6 +23,7 @@ import { DigitalKeepsakeView } from './components/views/DigitalKeepsakeView';
 import { MemoryJourneyView } from './components/views/memoryJourney/MemoryJourneyView';
 import { MemoryConstellationView } from './components/views/memoryConstellation/MemoryContellationView';
 import { MemoryGardenView } from './components/views/memoryGarden/MemoryGardenView';
+import { MemoryBloomView } from './components/views/memoryBloom/MemoryBloomView';
 import { PhysicalKeepsakeView } from './components/views/PhysicalKeepsakeView';
 import { StorageUpgradeView } from './components/views/StorageUpgradeView';
 import { DigitalStoreView } from './components/views/DigitalStoreView';
@@ -70,6 +71,8 @@ const AppContent: React.FC = () => {
         return <MemoryConstellationView />;
       case 'memory-garden':
         return <MemoryGardenView />;
+      case 'memory-bloom':
+        return <MemoryBloomView />;
       case 'physical-keepsake':
         return <PhysicalKeepsakeView />;
       case 'storage':

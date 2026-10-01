@@ -192,6 +192,17 @@ export const MemoryGardenView: React.FC<MemoryGardenViewProps> = ({
               <Sparkles className="w-3.5 h-3.5 text-rose-500" />
               <span className="hidden xl:inline">Sky</span>
             </button>
+
+            
+            {/* Template Switcher: Memory Bloom */}
+            <button
+              onClick={() => setCurrentView('memory-bloom')}
+              className="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-serif font-bold border border-stone-200 transition-all cursor-pointer"
+              title="Switch to Memory Bloom Keepsake Template"
+            >
+              <Flower2 className="w-3.5 h-3.5 text-[#FF6B6B]" />
+              <span className="hidden xl:inline">Bloom</span>
+            </button>
           </div>
         </div>
       </header>
