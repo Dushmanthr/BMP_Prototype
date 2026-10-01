@@ -177,6 +177,7 @@ export type AppView =
   | 'digital-keepsake'
   | 'memory-journey'
   | 'memory-constellation'
+  | 'memory-garden'
   | 'physical-keepsake'
   | 'storage'
   | 'storage-upgrade'

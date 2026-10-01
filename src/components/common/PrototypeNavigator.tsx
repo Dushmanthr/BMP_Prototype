@@ -14,6 +14,7 @@ import {
   ShoppingBag,
   Eye,
   Map,
+  Flower2,
 } from "lucide-react";
 import { AppView } from "../../types";
 
@@ -122,6 +123,12 @@ export const PrototypeNavigator: React.FC = () => {
       label: "14c. Keepsake: Constellation",
       tag: "NEW",
       icon: <Sparkles className="w-3.5 h-3.5 text-rose-400" />,
+    },
+    {
+      id: "memory-garden",
+      label: "14d. Keepsake: Memory Garden",
+      tag: "NEW",
+      icon: <Flower2 className="w-3.5 h-3.5 text-emerald-400" />,
     },
     {
       id: "physical-keepsake",
