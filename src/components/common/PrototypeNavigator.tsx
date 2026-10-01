@@ -13,6 +13,7 @@ import {
   HardDrive,
   ShoppingBag,
   Eye,
+  Map,
 } from 'lucide-react';
 import { AppView } from '../../types';
 
@@ -33,7 +34,8 @@ export const PrototypeNavigator: React.FC = () => {
     { id: 'creator-review', label: '10. Creator Review & Moderate', tag: 'Creator', icon: <Shield className="w-3.5 h-3.5" /> },
     { id: 'finalize-celebration', label: '11. Finalize Celebration', tag: 'Creator', icon: <Sparkles className="w-3.5 h-3.5" /> },
     { id: 'celebration-page', label: '12. Celebration Person View', tag: 'Celebration', icon: <Eye className="w-3.5 h-3.5 text-[#FF6B6B]" /> },
-    { id: 'digital-keepsake', label: '14. Digital Keepsake', tag: 'Shop', icon: <ShoppingBag className="w-3.5 h-3.5" /> },
+    { id: 'digital-keepsake', label: '14. Keepsake: Flip Book', tag: 'Shop', icon: <ShoppingBag className="w-3.5 h-3.5" /> },
+    { id: 'memory-journey', label: '14b. Keepsake: Memory Journey', tag: 'NEW', icon: <Map className="w-3.5 h-3.5 text-amber-400" /> },
     { id: 'physical-keepsake', label: '15. Physical Keepsake', tag: 'Shop', icon: <ShoppingBag className="w-3.5 h-3.5" /> },
     { id: 'storage', label: '16. Storage Upgrade', tag: 'Storage', icon: <HardDrive className="w-3.5 h-3.5" /> },
     { id: 'gift-finder', label: '17. Gift Finder Guided', tag: 'Gift', icon: <Gift className="w-3.5 h-3.5" /> },
