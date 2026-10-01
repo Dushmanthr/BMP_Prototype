@@ -118,6 +118,12 @@ export const PrototypeNavigator: React.FC = () => {
       icon: <Map className="w-3.5 h-3.5 text-amber-400" />,
     },
     {
+      id: "memory-constellation",
+      label: "14c. Keepsake: Constellation",
+      tag: "NEW",
+      icon: <Sparkles className="w-3.5 h-3.5 text-rose-400" />,
+    },
+    {
       id: "physical-keepsake",
       label: "15. Physical Keepsake",
       tag: "Shop",
@@ -198,7 +204,7 @@ export const PrototypeNavigator: React.FC = () => {
             id="toggle-all-flows-btn"
             className="flex items-center gap-1 bg-white/10 hover:bg-white/20 text-gray-200 px-2.5 py-1 rounded cursor-pointer transition-colors"
           >
-            <span>All 18 Screens</span>
+            <span>All 20 Screens</span>
             {isOpen ? (
               <ChevronUp className="w-3.5 h-3.5" />
             ) : (
